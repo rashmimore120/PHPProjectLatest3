@@ -1,0 +1,412 @@
+<style>
+    table {
+        width: 100%;
+        border-collapse: collapse;
+        text-align: center;
+    }
+
+    table tr th, table tr td {
+        border: 1px #eee solid;
+        padding: 5px;
+    }
+
+</style>
+
+<table>
+  <thead>
+    <tr>
+      <th>Invoice Number</th>
+      <th>Amount</th>
+      <th>Status</th>
+      <th>Due Date</th>
+    </tr>
+  </thead>
+  <tbody>
+    {% for invoice in invoices %}
+      <tr>
+        <td>{{ invoice.invoiceNumber }}</td>
+        <td>{{ invoice.amount|format_currency('USD') }}</td>
+        <td>{{ invoice.status }}</td>
+        <td>
+            {{ invoice.dueDate is empty ? 'N/A' : invoice.dueDate|date('m/d/Y') }}     
+        </td>
+      </tr>
+    {% else %}
+      <tr><td colspan="4">No Invoices Found</td></tr> 
+    {% endfor %}   
+    
+  </tbody>
+</table>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- <style>
+    table {
+        width: 100%;
+        border-collapse: collapse;
+        text-align: center;
+    }
+
+    table tr th, table tr td {
+        border: 1px #eee solid;
+        padding: 5px;
+    }
+
+</style>
+<table>
+    <thead>
+        <tr>
+            <th>Invoice #</th>
+            <th>Amount</th>
+            <th>Status</th>
+            <th>Due Date</th>
+        </tr>
+    </thead>
+    <tbody>
+        <?php if (empty($invoices)) : ?>
+            <tr><td colspan="4"><No Invoices Found></td></tr>
+        <?php else: ?>
+            <?php foreach ($invoices as $invoice): ?>
+                <tr>
+                    <td><?= $invoice['invoiceNumber'] ?></td>
+                    <td>$<?= number_format($invoice['amount'], 2) ?></td>
+                    <td><?= $invoice['status'] ?></td>
+                    <td>
+                        <?php if($invoice['dueDate']): ?>
+                            <?= date('m/d/Y', strtotime($invoice['dueDate'])) ?>
+                        <?php else: ?>
+                            N/A
+                        <?php endif ?>       
+                    </td>
+                </tr>
+            <?php endforeach ?>
+        <?php endif ?>                    
+    </tbody>
+</table> -->
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- <style>
+    table {
+        width: 100%;
+        border-collapse: collapse;
+        text-align: center;
+    }
+
+    table tr th, table tr td {
+        border: 1px #eee solid;
+        padding: 5px;
+    }
+
+    .color-green {
+        color: green;
+    }
+    .color-red {
+        color: red;
+    }
+    .color-grey {
+        color: grey;
+    }
+    .color-orange {
+        color: orange;
+    }
+
+</style>
+<table>
+    <thead>
+        <tr>
+            <th>Invoice #</th>
+            <th>Amount</th>
+            <th>Status</th>
+        </tr>
+    </thead>
+    <tbody>
+        <?php foreach ($invoices as $invoice) : ?>
+            <tr>
+                <td><?= $invoice['invoice_number'] ?></td>
+                <td>$<?= number_format($invoice['amount'], 2) ?></td>
+                <td class="<?= \App\Enums\InvoiceStatus::tryFrom($invoice['status'])->color()->getClass() ?>">
+                    <?= \App\Enums\InvoiceStatus::tryFrom($invoice['status'])->toString() ?>
+                </td>
+            </tr>
+        <?php endforeach ?>    
+    </tbody>
+</table> -->
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- <!DOCTYPE html>
+<html>
+<head>
+    <meta charset='utf-8'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <title>Page Title</title>
+    <meta name='viewport' content='width=device-width, initial-scale=1'>
+    <link rel='stylesheet' type='text/css' media='screen' href='main.css'>
+    <script src='main.js'></script>
+</head>
+<body>Invoices</body>
+</html> -->
